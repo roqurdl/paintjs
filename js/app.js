@@ -8,6 +8,9 @@ const save = document.querySelector("#jsSave");
 const CANVAS_SIZE = 500;
 const DEFAULT_COLOR = "#2c2c2c";
 
+ctx.fillStyle = "white";
+ctx.fillRect(0, 0, CANVAS_SIZE, CANVAS_SIZE);
+
 ctx.lineWidth = 1.5;
 ctx.strokeStyle = DEFAULT_COLOR;
 ctx.fillStyle = DEFAULT_COLOR;
