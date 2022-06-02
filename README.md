@@ -7,3 +7,7 @@ Demo와 reference에서 차이는 js 파일에서 canvas, range, mode, save 와�
 또한 명명법이 내가 쓴 코드는 더 짧으나 좀 더 균일한 규칙을 만들어서 명명해야 할 것으로 판단. 현재는 의미를 한번에 파악하기 좀 더 어려운 듯하다. ex) canvasClick => fillCanvasClick 같이 한번에 작동방식과 무엇을 의미하는지 한번에 알 수 있게.
 
 reference와 두번째 차이는 브러쉬의 두깨를 바꾸는 function changeRange에서 나는 argument를 사용하지 않고 입력받은 input value를 사용했고, reference에서는 이를 사용해서 작성했다. 이를 활용할 때마다 console.log를 사용해서 해당 정보들을 다 확인했는데, 이런 과정을 좀 더 해봐야겠다.
+
+마지막으로는 html에서 나는 canvas의 크기를 미리 정해뒀지만 reference에서는 js파일을 사용했다. html을 사용해서 미리 할 수도 있지만, 미리 못했으면 js를 통해 설정해줄 수 있다는 사실을 잊지 말아야겠다.
+
+improve는 reference에서 참고한 완성품에 추가를 했으면 좋겠는 아이디어들을 추가한 내용들이다. 이를 app+파일에 적었다.

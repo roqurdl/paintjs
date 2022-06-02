@@ -4,6 +4,8 @@ const colors = document.querySelectorAll("#jsColors div");
 const range = document.querySelector("#jsRange");
 const mode = document.querySelector("#jsMode");
 const save = document.querySelector("#jsSave");
+const eraser = document.querySelector("#jsEraser");
+const clear = document.querySelector("#jsClear");
 
 const CANVAS_SIZE = 500;
 const DEFAULT_COLOR = "#2c2c2c";
@@ -21,6 +23,7 @@ let painting = false;
 function onMouseMove(e) {
   const x = e.offsetX;
   const y = e.offsetY;
+
   if (painting == false) {
     ctx.beginPath(x, y);
     ctx.moveTo(x, y);
@@ -72,6 +75,14 @@ function handleSaveClick() {
   link.download = "paint";
   link.click();
 }
+function handleClearClick() {
+  ctx.fillStyle = "white";
+  ctx.fillRect(0, 0, CANVAS_SIZE, CANVAS_SIZE);
+}
+function handleEraserClick() {
+  ctx.lineWidth = 10;
+  ctx.strokeStyle = "white";
+}
 
 canvas.addEventListener("mousemove", onMouseMove);
 canvas.addEventListener("mouseup", finishPainting);
@@ -85,3 +96,5 @@ Array.from(colors).forEach((color) =>
 range.addEventListener("input", changeRange);
 mode.addEventListener("click", handleModeClick);
 save.addEventListener("click", handleSaveClick);
+clear.addEventListener("click", handleClearClick);
+eraser.addEventListener("click", handleEraserClick);
