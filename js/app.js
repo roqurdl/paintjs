@@ -6,6 +6,7 @@ const mode = document.querySelector("#jsMode");
 const save = document.querySelector("#jsSave");
 const eraser = document.querySelector("#jsEraser");
 const clear = document.querySelector("#jsClear");
+const fileName = document.querySelector("#jsSaveName");
 
 const CANVAS_SIZE = 500;
 const DEFAULT_COLOR = "#2c2c2c";
@@ -71,9 +72,14 @@ function canvasClick() {
 function handleSaveClick() {
   const image = canvas.toDataURL();
   const link = document.createElement("a");
-  link.href = image;
-  link.download = "paint";
-  link.click();
+  const name = fileName.value;
+  if (name === "") {
+    alert("파일명을 입력해주세요.");
+  } else {
+    link.href = image;
+    link.download = name;
+    link.click();
+  }
 }
 function handleClearClick() {
   ctx.fillStyle = "white";
